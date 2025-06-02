@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="icon" type="image/x-icon" href="images/favicon.png">
+  <title>Online Fashion</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/custom.css">
+  <link rel="stylesheet" href="css/checkout.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg shadow">
+  <div class="container position-relative">
+    <a class="navbar-brand" href="#">
+      <img src="images/logo.svg" alt="logo">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="icons d-flex align-items-center">
+      <a href="cart.html" class="topRightIcon text-decoration-none">
+        <i class="bi bi-cart fs-5"></i><span id="cartCount">0</span>
+      </a>
+      <a href="wishlist.html" class="topRightIcon text-decoration-none">
+        <i class="bi bi-heart fs-5"></i><span id="wishlistCount">0</span>
+      </a>
+    </div>
+    <div class="collapse navbar-collapse justify-content-center" id="navbarContent">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">About Us</a></li>
+        <li class="nav-item"><a class="nav-link" href="shop.html">Shop</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Contact Us</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="inner-hero d-flex align-items-center text-center">
+  <div class="container">
+    <h1 class="page-title">Cart</h1>
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb justify-content-center">
+        <li class="breadcrumb-item"><a href="shop.html">Shop</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Cart</li>
+      </ol>
+    </nav>
+  </div>
+</section>
+
+<!-- Cart Section -->
+<div class="container my-5">
+  <h2 class="mb-4">Your Cart</h2>
+  <div id="cartContainer" class="mt-4"></div>
+  <div id="cartTotal" class="text-end mt-4 fs-5 fw-bold"></div>
+  <div class="text-end mt-4">
+    <a href="checkout.html" class="btn btn-dark" id="checkoutBtn">Proceed to Checkout</a>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="row gy-4">
+      <div class="col-md-4">
+        <img src="images/logo.svg" alt="Logo" class="mb-3">
+        <p>Provide detailed information about the product, including features, specifications, and benefits.</p>
+        <p><i class="bi bi-geo-alt-fill"></i> Apt. 407 943 Bernier Mill, South Clintborough, WA 41222-0367</p>
+        <p><i class="bi bi-telephone-fill"></i> (+11) 800-000-1234</p>
+        <p><i class="bi bi-envelope-fill"></i> support@trendy-shopping.com</p>
+      </div>
+      <div class="col-md-4">
+        <div class="row">
+          <div class="col-6">
+            <h5 class="footer-title">Quick Links</h5>
+            <ul class="list-unstyled">
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Brands</a></li>
+              <li><a href="#">Specials</a></li>
+              <li><a href="#">Gift Cards</a></li>
+              <li><a href="#">Warranty & Services</a></li>
+            </ul>
+          </div>
+          <div class="col-6">
+            <h5 class="footer-title">&nbsp;</h5>
+            <ul class="list-unstyled">
+              <li><a href="#">Terms & Conditions</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">FAQ’s</a></li>
+              <li><a href="#">Trending</a></li>
+              <li><a href="#">Customer Support</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <h5 class="footer-title">Join With Us</h5>
+        <div class="mb-3">
+            <div class="d-flex justify-content-start">
+              <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" class="social-icon"><i class="fab fa-x-twitter"></i></a>
+              <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+              <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+            </div>
+          </div>
+        <h6>Newsletter</h6>
+        <form class="d-flex">
+          <input type="email" class="form-control me-2" placeholder="Email address">
+          <button type="submit" class="btn btn-subscribe">Subscribe</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<section class="endFooter text-center bg-dark text-white py-3">
+  <div class="container">
+    <p class="text-light m-0">Fashion &copy; <span id="year"></span>. All Rights Reserved</p>
+  </div>
+</section>
+
+<!-- Scripts -->
+<script>
+  const products = [
+    { id: 1, title: "Best Women's Long Skirt", price: 64, originalPrice: 75, discount: "15%", img: "images/w1.png" },
+    { id: 2, title: "Men's Winter Jacket", price: 54, discount: null, img: "images/m1.png" },
+    { id: 3, title: "Women's Cargo Jacket", price: 70, discount: null, img: "images/w4.png" },
+    { id: 4, title: "Official Men's Shirt", price: 68, originalPrice: 85, discount: "20%", img: "images/m2.png" },
+    { id: 5, title: "Women’s Casual Skirt", price: 75, originalPrice: 64, discount: "15%", img: "images/w2.png" },
+    { id: 6, title: "Men’s Casual Shirt", price: 34, discount: null, img: "images/m3.png" },
+    { id: 7, title: "Women’s Hot Dress", price: 55, discount: null, img: "images/w3.png" },
+    { id: 8, title: "Men’s Winter T-shirt", price: 50, originalPrice: 40, discount: "20%", img: "images/m4.png" },
+    { id: 9, title: "Men-Women Combo", price: 102, originalPrice: 120, discount: "15%", img: "images/men-women-combo.png" },
+    { id: 10, title: "Men’s Traditional", price: 44, discount: null, img: "images/men-ethnic1.png" },
+    { id: 11, title: "Women’s Traditiona", price: 60, discount: null, img: "images/women-traditional1.png" },
+    { id: 12, title: "Men’s Party Wear", price: 92, originalPrice: 115, discount: "20%", img: "images/men-party1.png" }
+  ];
+
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  let quantities = JSON.parse(localStorage.getItem("cartQuantities")) || {};
+
+  function saveCart() {
+    localStorage.setItem("cart", JSON.stringify(cart));
+    localStorage.setItem("cartQuantities", JSON.stringify(quantities));
+  }
+
+  function updateCartCountDisplay() {
+    let totalQty = 0;
+    for (let id of cart) {
+      totalQty += quantities[id] || 1;
+    }
+    document.getElementById("cartCount").textContent = totalQty;
+  }
+
+  function updateCartUI() {
+    const container = document.getElementById('cartContainer');
+    const totalEl = document.getElementById('cartTotal');
+    const checkoutBtn = document.getElementById('checkoutBtn');
+    container.innerHTML = '';
+    let total = 0;
+
+    if (cart.length === 0) {
+      container.innerHTML = `
+        <div class="text-center my-5">
+          <h4>Your cart is empty.</h4>
+          <a href="shop.html" class="btn btn-primary mt-3">Return to Shop</a>
+        </div>
+      `;
+      totalEl.textContent = '';
+      checkoutBtn.classList.add('disabled');
+      checkoutBtn.setAttribute('aria-disabled', 'true');
+      updateCartCountDisplay();
+      return;
+    }
+
+    cart.forEach(id => {
+      const product = products.find(p => p.id === id);
+      const qty = quantities[id] || 1;
+      const itemTotal = qty * product.price;
+      total += itemTotal;
+
+      const row = document.createElement('div');
+      row.className = 'row align-items-center';
+
+      row.innerHTML = `
+        <div class="col-1 text-center">
+          <span class="remove-btn" onclick="removeFromCart(${id})"><i class="bi bi-x-lg"></i></span>
+        </div>
+        <div class="col-2 d-none d-md-block text-center">
+          <img src="${product.img}" class="cart-item-img" alt="${product.title}">
+        </div>
+        <div class="col-3">
+          <h6>${product.title}</h6>
+        </div>
+        <div class="col-2">
+            ${product.originalPrice ? `<del class="text-muted me-1">$${product.originalPrice.toFixed(2)}</del>` : ''}
+          <strong>$${product.price.toFixed(2)}</strong>
+        </div>
+        <div class="col-3 col-sm-4 col-md-2">
+          <div class="input-group">
+            <button class="btn btn-outline-secondary qty-btn" onclick="changeQty(${id}, -1)">-</button>
+            <input type="text" class="form-control text-center qtyField" value="${qty}" readonly>
+            <button class="btn btn-outline-secondary qty-btn" onclick="changeQty(${id}, 1)">+</button>
+          </div>
+        </div>
+        <div class="col-2 col-md-2 text-end">
+          <strong>$${itemTotal.toFixed(2)}</strong>
+        </div>
+        
+      `;
+      container.appendChild(row);
+    });
+
+    totalEl.textContent = `Total: $${total.toFixed(2)}`;
+    checkoutBtn.classList.remove('disabled');
+    checkoutBtn.removeAttribute('aria-disabled');
+    updateCartCountDisplay();
+  }
+
+  function changeQty(id, delta) {
+    quantities[id] = (quantities[id] || 1) + delta;
+    if (quantities[id] <= 0) {
+      removeFromCart(id);
+    } else {
+      saveCart();
+      updateCartUI();
+    }
+  }
+
+  function removeFromCart(id) {
+    cart = cart.filter(itemId => itemId !== id);
+    delete quantities[id];
+    saveCart();
+    updateCartUI();
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const wishlistItems = JSON.parse(localStorage.getItem("wishlist")) || [];
+    document.getElementById("wishlistCount").textContent = wishlistItems.length;
+    updateCartUI();
+  });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>

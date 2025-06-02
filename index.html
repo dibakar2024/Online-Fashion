@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="images/favicon.png">
+  <title>Online Fashion</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/custom.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- Navbar HTML -->
+<nav class="navbar navbar-expand-lg shadow">
+  <div class="container position-relative">
+    <a class="navbar-brand" href="#">
+      <img src="images/logo.svg" alt="logo">
+    </a>
+
+    <!-- Mobile Toggle -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+      aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Wishlist/Cart Icons -->
+    <div class="icons d-flex align-items-center">
+      <a href="cart.html" class="topRightIcon text-decoration-none">
+        <i class="bi bi-cart fs-5"></i><span id="cartCount">0</span>
+      </a>
+      <a href="wishlist.html" class="topRightIcon text-decoration-none">
+        <i class="bi bi-heart fs-5"></i><span id="wishlistCount">0</span>
+      </a>
+    </div>
+
+    <!-- Nav Menu -->
+    <div class="collapse navbar-collapse justify-content-center" id="navbarContent">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">About Us</a></li>
+        <li class="nav-item"><a class="nav-link" href="shop.html">Shop</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Contact Us</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+      <section class="hero">
+        <div class="container">
+          <div class="row hero-sec">
+            <div class="hero-content">
+              <h1>Exclusive<br><span>Winter Collection</span></h1>
+              <p>New Modern Stylist Fashionable Men’s Wear</p>
+              <a href="shop.html" class="btn">Shop Now →</a>
+            </div>
+            <div class="hero-image">
+              <img src="images/men1-banner.png" alt="Winter Collection" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="py-4 bg-light">
+        <div class="container">
+          <div class="row g-4">
+      
+            <div class="col-md-3 col-sm-6">
+              <div class="p-3 border rounded shadow-sm h-100 roundBox">
+                <i class="bi bi-truck display-5 text-secondary"></i>
+                <div class="rdbox-content">
+                  <h4 class="mt-3 fw-medium">FREE SHIPPING</h4>
+                  <p class="text-muted mb-0">Free Delivery Order Over $25</p>
+                </div>
+              </div>
+            </div>
+      
+            <div class="col-md-3 col-sm-6">
+              <div class="p-3 border rounded shadow-sm h-100 roundBox">
+                <i class="bi bi-tags display-5 text-secondary"></i>
+                <div class="rdbox-content">
+                  <h4 class="mt-3 fw-medium">GREAT VALUE</h4>
+                  <p class="text-muted mb-0">We offer best prices</p>
+                </div>
+              </div>
+            </div>
+      
+            <div class="col-md-3 col-sm-6">
+              <div class="p-3 border rounded shadow-sm h-100 roundBox">
+                <i class="bi bi-shield-lock display-5 text-secondary"></i>
+                <div class="rdbox-content">
+                  <h4 class="mt-3 fw-medium">SECURE PAYMENT</h4>
+                  <p class="text-muted mb-0">Accept all major cards</p>
+                </div>
+              </div>
+            </div>
+      
+            <div class="col-md-3 col-sm-6">
+              <div class="p-3 border rounded shadow-sm h-100 roundBox">
+                <i class="bi bi-headset display-5 text-secondary"></i>
+                <div class="rdbox-content">
+                  <h4 class="mt-3 fw-medium">CUSTOMER CARE</h4>
+                  <p class="text-muted mb-0">Contact us for more info</p>
+                </div>
+              </div>
+            </div>
+      
+          </div>
+        </div>
+      </section>
+
+      <section class="py-5 bg-light">
+        <div class="container">
+          <h2 class="section-title">Shop By Categories</h2>
+          <div class="row g-4">
+      
+            <div class="col-sm-6 col-lg-3">
+              <div class="category-card catCard1">
+                <div class="category-overlay">
+                  <h5>Men's Fashion</h5>
+                  <a href="shop.html" class="btn">Shop Now</a>
+                </div>
+              </div>
+            </div>
+      
+            <div class="col-sm-6 col-lg-3">
+              <div class="category-card catCard2">
+                <div class="category-overlay">
+                  <h5>Women's Fashion</h5>
+                  <a href="shop.html" class="btn">Shop Now</a>
+                </div>
+              </div>
+            </div>
+      
+            <div class="col-sm-6 col-lg-3">
+              <div class="category-card catCard3">
+                <div class="category-overlay">
+                  <h5>New Arrivals</h5>
+                  <a href="shop.html" class="btn">Shop Now</a>
+                </div>
+              </div>
+            </div>
+      
+            <div class="col-sm-6 col-lg-3">
+              <div class="category-card catCard4">
+                <div class="category-overlay">
+                  <h5>Top Sell's</h5>
+                  <a href="shop.html" class="btn">Shop Now</a>
+                </div>
+              </div>
+            </div>
+      
+          </div>
+        </div>
+      </section>
+
+      <section id="productSection">
+        <div class="container py-5">
+          <h2 class="text-center mb-3">Trending product</h2>
+          <p class="text-center mb-5">Follow the most popular trends and get exclusive items from Fashion</p>
+          <div class="row" id="productContainer"></div>
+        </div>
+      </section>
+
+      <section class="hot-deal-section position-relative">
+        <div class="hot-deal-bg"></div>
+        <div class="container position-relative">
+          <div class="row align-items-center">
+            <!-- Left Column: Text -->
+            <div class="col-md-6 text-center deal-text">
+              <img src="images/off-tag 1.svg" alt="Off Tag">
+              <div class="subtext">Hot Deals You Can’t Miss</div>
+              <p class="description">Buy any products & take the gift voucher</p>
+              <button class="shop-now-btn" onclick="goToPage()">Shop Now →</button>
+            </div>
+      
+            <!-- Right Column: Image -->
+            <div class="col-md-6 deal-image mt-4 mt-md-0">
+              <img src="images/hotDeals.jpg" alt="Hot Deals Models" class="d-block d-md-none">
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="py-5 bg-light text-center testimonialSec">
+        <div class="container">
+          <h2 class="fw-medium">Customer Say!</h2>
+          <p class="text-muted mb-4">Our customers adore our products, and we constantly aim to delight them.</p>
+      
+          <div id="testimonialCarousel" class="carousel slide text-start" data-bs-ride="carousel">
+            <div class="carousel-inner" id="carousel-content"></div>
+      
+            <!-- Indicators -->
+            <div class="carousel-indicators position-relative mt-4" id="carousel-indicators"></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="articles">
+        <div class="container py-5">
+          <h2 class="text-center mb-4">News & Articles</h2>
+          <div class="row g-4">
+            
+            <!-- Article 1 -->
+            <div class="col-md-4">
+              <div class="card card-news position-relative h-100">
+                <img src="images/news1.png" class="card-img-top" alt="...">
+                <div class="badge-date">10 MAY</div>
+                <div class="card-body">
+                  <h4 class="card-title">Latest Trends in Summer Fashion 2025</h4>
+                  <p class="card-text">
+                    Discover the top colors, fabrics, and silhouettes dominating this summer’s fashion scene.
+                  </p>
+                  <a href="#" class="read-more">Read More <span>&rarr;</span></a>
+                </div>
+              </div>
+            </div>
+        
+            <!-- Article 2 -->
+            <div class="col-md-4">
+              <div class="card card-news position-relative h-100">
+                <img src="images/news2.png" class="card-img-top" alt="...">
+                <div class="badge-date">21 MAY</div>
+                <div class="card-body">
+                  <h4 class="card-title">Sustainable Clothing: What You Need to Know</h4>
+                  <p class="card-text">
+                    Learn how eco-friendly fabrics and conscious production are shaping the future of fashion.
+                  </p>
+                  <a href="#" class="read-more">Read More <span>&rarr;</span></a>
+                </div>
+              </div>
+            </div>
+        
+            <!-- Article 3 -->
+            <div class="col-md-4">
+              <div class="card card-news position-relative h-100">
+                <img src="images/news3.png" class="card-img-top" alt="...">
+                <div class="badge-date">10 JUN</div>
+                <div class="card-body">
+                  <h4 class="card-title">Sustainable Fabrics: The Future of Fashion</h4>
+                  <p class="card-text">
+                    Here’s a look at some of the materials making waves in the fashion world today.
+                  </p>
+                  <a href="#" class="read-more">Read More <span>&rarr;</span></a>
+                </div>
+              </div>
+            </div>
+        
+          </div>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row gy-4">
+      
+            <!-- Logo + Contact Info -->
+            <div class="col-md-4">
+              <img src="images/logo.svg" alt="Logo" class="mb-3">
+              <p>Provide detailed information about the product, including features, specifications, and benefits.</p>
+              <p><i class="bi bi-geo-alt-fill"></i> Apt. 407 943 Bernier Mill,<br>South Clintborough, WA 41222-0367</p>
+              <p><i class="bi bi-telephone-fill"></i> (+11) 800-000-1234</p>
+              <p><i class="bi bi-envelope-fill"></i> support@trendy-shopping.com</p>
+            </div>
+      
+            <!-- Quick Links -->
+            <div class="col-md-4">
+              <div class="row">
+                <div class="col-6">
+                  <h5 class="footer-title">Quick Links</h5>
+                  <ul class="list-unstyled">
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Brands</a></li>
+                    <li><a href="#">Specials</a></li>
+                    <li><a href="#">Gift Cards</a></li>
+                    <li><a href="#">Warranty & Services</a></li>
+                  </ul>
+                </div>
+                <div class="col-6">
+                  <h5 class="footer-title">&nbsp;</h5>
+                  <ul class="list-unstyled">
+                    <li><a href="#">Terms & Conditions</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">FAQ’s</a></li>
+                    <li><a href="#">Trending</a></li>
+                    <li><a href="#">Customer Support</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+      
+            <!-- Social & Newsletter -->
+            <div class="col-md-4">
+              <h5 class="footer-title">Join With Us</h5>
+              <div class="mb-3">
+                <div class="d-flex justify-content-start">
+                  <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                  <a href="#" class="social-icon"><i class="fab fa-x-twitter"></i></a>
+                  <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                  <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                  <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                </div>
+              </div>
+              <h6>Newsletter</h6>
+              <form class="d-flex">
+                <input type="email" class="form-control me-2" placeholder="Email address">
+                <button type="submit" class="btn btn-subscribe">Subscribe</button>
+              </form>
+            </div>
+      
+          </div>
+        </div>
+      </footer>
+
+      <section class="endFooter text-center bg-dark text-white py-3">
+        <div class="container">
+          <p class="text-light m-0">
+            Fashion &copy; <span id="year"></span>. All Rights Reserved
+          </p>
+        </div>
+      </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/productJson.js"></script> <!-- Only if needed -->
+    <script src="js/testimonial.js"></script>
+    
+    
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+  <script>
+    document.querySelectorAll('.navbar-nav .nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        const navbarToggler = document.querySelector('.navbar-toggler');
+        const navbarCollapse = document.querySelector('#navbarContent');
+  
+        if (window.innerWidth < 992 && navbarCollapse.classList.contains('show')) {
+          navbarToggler.click(); // Collapse the navbar
+        }
+      });
+    });
+  </script>
+  
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      setTimeout(() => {
+        const productCards = document.querySelectorAll("#productContainer .col-md-3");
+        if (productCards.length > 8) {
+          productCards.forEach((card, index) => {
+            if (index >= 8) card.remove();
+          });
+        }
+      }, 300); // Delay slightly to wait for product rendering
+    });
+  </script>
+  
+  
+</body>
+</html>

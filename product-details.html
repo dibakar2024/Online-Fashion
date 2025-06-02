@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" type="image/x-icon" href="images/favicon.png">
+  <title>Online Fashion</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/custom.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <style>
+    
+    .product-img {
+      width: 100%;
+      border-radius: 10px;
+      background-color: #F2F2F2;
+    }
+    .price del {
+      color: #888;
+    }
+    .badge-sale {
+      background-color: #dc3545;
+      color: white;
+      font-size: 0.8rem;
+      margin-left: 10px;
+      position: inherit;
+      padding: 5px 7px;
+    }
+    .badge-tag {
+      background-color: #000;
+      color: white;
+      font-size: 0.8rem;
+      margin-left: 20px;
+      border-radius: 15px;
+    }
+    .checkout-logos img {
+      height: 30px;
+      margin-right: 10px;
+    }
+    .qty-btn {
+      width: 40px;
+      /* height: 40px; */
+      background: none;
+      border: none;
+    }
+    .qty-input {
+      width: 50px;
+      text-align: center;
+    }
+    .qty-btn:hover{
+      background: none;
+      color: #000;
+    }
+    #buyNow{
+      background-color: #000;
+      color: #fff;
+      min-width: 320px;
+    }
+  </style>
+</head>
+<body>
+<!-- Navbar (reuse from index.html) -->
+<nav class="navbar navbar-expand-lg shadow">
+  <div class="container position-relative">
+    <a class="navbar-brand" href="#">
+      <img src="images/logo.svg" alt="logo">
+    </a>
+
+    <!-- Mobile Toggle -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+      aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Wishlist/Cart Icons -->
+    <div class="icons d-flex align-items-center">
+      <a href="cart.html" class="topRightIcon text-decoration-none">
+        <i class="bi bi-cart fs-5"></i><span id="cartCount">0</span>
+      </a>
+      <a href="wishlist.html" class="topRightIcon text-decoration-none">
+        <i class="bi bi-heart fs-5"></i><span id="wishlistCount">0</span>
+      </a>
+    </div>
+
+    <!-- Nav Menu -->
+    <div class="collapse navbar-collapse justify-content-center" id="navbarContent">
+      <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="shop.html">Shop</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Contact Us</a></li>
+        </ul>
+    </div>
+  </div>
+</nav>
+
+  <!-- Inner Page Hero Section -->
+  <section class="inner-hero d-flex align-items-center text-center">
+      <div class="container">
+      <h1 class="page-title">Product Details</h1>
+      <nav aria-label="breadcrumb">
+          <ol class="breadcrumb justify-content-center">
+          <li class="breadcrumb-item"><a href="shop.html">Shop</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Product Details</li>
+          </ol>
+      </nav>
+      </div>
+  </section>
+
+<div class="container my-5">
+  <div class="row justify-content-between">
+    <!-- Product Image -->
+    <div class="col-md-6 text-center">
+      <img id="productImage" src="" alt="" class="product-img" />
+    </div>
+
+    <!-- Product Details -->
+    <div class="col-md-5">
+      <h2 id="productTitle" class="mb-4"></h2>
+      <div class="d-flex align-items-center mb-2">
+        <div class="price" id="priceContainer"></div>
+        <span class="badge badge-tag" id="badgeTag" style="display:none">SALE</span>
+        <span class="badge badge-sale" id="discountBadge" style="display:none"></span>
+      </div>
+
+      <p class="text-muted mt-4 mb-4" id="productDescription"></p>
+
+      <!-- Quantity & Buttons -->
+      <div class="mb-3">
+        <label class="form-label fw-semibold">Quantity:</label>
+        <div class="d-flex gap-4">
+          <div class="d-flex align-items-center border">
+            <button class="btn btn-outline-secondary qty-btn" id="decreaseQty">-</button>
+            <input type="text" id="quantity" value="1" class="form-control qty-input mx-2" readonly />
+            <button class="btn btn-outline-secondary qty-btn" id="increaseQty">+</button>
+          </div>
+          <div class="d-flex">
+            <button class="btn btn-outline-dark px-4" id="addToCart">Add To Cart</button>
+          </div>
+        </div>
+        <div class="d-block mt-4">
+          <button class="btn btn-dark px-4" id="buyNow">Buy It Now</button>
+        </div>
+      </div>
+
+      
+
+      <p class="mt-4 fw-semibold">Guaranteed safe checkout:</p>
+      <div class="checkout-logos">
+        <img src="https://img.icons8.com/color/48/visa.png" alt="Visa" />
+        <img src="https://img.icons8.com/color/48/mastercard.png" alt="MasterCard" />
+        <img src="https://img.icons8.com/color/48/amex.png" alt="Amex" />
+        <img src="https://img.icons8.com/color/48/paypal.png" alt="PayPal" />
+        <img src="https://img.icons8.com/color/48/discover.png" alt="Discover" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <div class="row gy-4">
+
+      <!-- Logo + Contact Info -->
+      <div class="col-md-4">
+        <img src="images/logo.svg" alt="Logo" class="mb-3">
+        <p>Provide detailed information about the product, including features, specifications, and benefits.</p>
+        <p><i class="bi bi-geo-alt-fill"></i> Apt. 407 943 Bernier Mill,<br>South Clintborough, WA 41222-0367</p>
+        <p><i class="bi bi-telephone-fill"></i> (+11) 800-000-1234</p>
+        <p><i class="bi bi-envelope-fill"></i> support@trendy-shopping.com</p>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="col-md-4">
+        <div class="row">
+          <div class="col-6">
+            <h5 class="footer-title">Quick Links</h5>
+            <ul class="list-unstyled">
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Brands</a></li>
+              <li><a href="#">Specials</a></li>
+              <li><a href="#">Gift Cards</a></li>
+              <li><a href="#">Warranty & Services</a></li>
+            </ul>
+          </div>
+          <div class="col-6">
+            <h5 class="footer-title">&nbsp;</h5>
+            <ul class="list-unstyled">
+              <li><a href="#">Terms & Conditions</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">FAQ’s</a></li>
+              <li><a href="#">Trending</a></li>
+              <li><a href="#">Customer Support</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Social & Newsletter -->
+      <div class="col-md-4">
+        <h5 class="footer-title">Join With Us</h5>
+        <div class="mb-3">
+          <div class="d-flex justify-content-start">
+            <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-x-twitter"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+        <h6>Newsletter</h6>
+        <form class="d-flex">
+          <input type="email" class="form-control me-2" placeholder="Email address">
+          <button type="submit" class="btn btn-subscribe">Subscribe</button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</footer>
+
+<section class="endFooter text-center bg-dark text-white py-3">
+  <div class="container">
+    <p class="text-light m-0">
+      Fashion &copy; <span id="year"></span>. All Rights Reserved
+    </p>
+  </div>
+</section>
+
+<script>
+  const products = [
+    { id: 1, title: "Best Women's Long Skirt", price: 64, originalPrice: 75, discount: "15%", img: "images/w1.png", description: "The garments labelled as Committed are products that have been produced using sustainable fibres or processes, reducing their environmental impact." },
+    { id: 2, title: "Men's Winter Jacket", price: 54, discount: null, img: "images/m1.png", description: "Stay warm with this cozy winter jacket." },
+    { id: 3, title: "Women's Cargo Jacket", price: 70, discount: null, img: "images/w4.png", description: "Stylish cargo jacket with multiple pockets." },
+    { id: 4, title: "Official Men's Shirt", price: 68, originalPrice: 85, discount: "20%", img: "images/m2.png", description: "Perfect for official or casual occasions." },
+    { id: 5, title: "Women’s Casual Skirt", price: 75, originalPrice: 64, discount: "15%", img: "images/w2.png", description: "Comfortable casual skirt for daily wear." },
+    { id: 6, title: "Men’s Casual Shirt", price: 34, discount: null, img: "images/m3.png", description: "Casual shirt with relaxed fit." },
+    { id: 7, title: "Women’s Hot Dress", price: 55, discount: null, img: "images/w3.png", description: "Elegant dress for special occasions." },
+    { id: 8, title: "Men’s Winter T-shirt", price: 50, originalPrice: 40, discount: "20%", img: "images/m4.png", description: "Stay warm and stylish with this winter tee." },
+    { id: 9, title: "Men-Women Combo", price: 102, originalPrice: 120, discount: "15%", img: "images/men-women-combo.png", description: "Check our most popular combo dresses." },
+    { id: 10, title: "Men’s Traditional", price: 44, discount: null, img: "images/men-ethnic1.png" },
+    { id: 11, title: "Women’s Traditiona", price: 60, discount: null, img: "images/women-traditional1.png" },
+    { id: 12, title: "Men’s Party Wear", price: 92, originalPrice: 115, discount: "20%", img: "images/men-party1.png" }
+  ];
+
+  const selectedProductId = parseInt(localStorage.getItem('selectedProductId'));
+  const product = products.find(p => p.id === selectedProductId) || products[0];
+
+  const productImage = document.getElementById('productImage');
+  const productTitle = document.getElementById('productTitle');
+  const priceContainer = document.getElementById('priceContainer');
+  const discountBadge = document.getElementById('discountBadge');
+  const badgeTag = document.getElementById('badgeTag');
+  const productDescription = document.getElementById('productDescription');
+  const quantityInput = document.getElementById('quantity');
+
+  productImage.src = product.img;
+  productImage.alt = product.title;
+  productTitle.textContent = product.title;
+  productDescription.textContent = product.description || '';
+
+  if(product.originalPrice && product.originalPrice > product.price) {
+    priceContainer.innerHTML = `<del>$${product.originalPrice.toFixed(2)}</del><span class="ms-4 fw-bold fs-5">$${product.price.toFixed(2)}</span>`;
+    badgeTag.style.display = 'inline-block';
+  } else {
+    priceContainer.innerHTML = `<span class="fw-bold fs-5">$${product.price.toFixed(2)}</span>`;
+    badgeTag.style.display = 'none';
+  }
+
+  if (product.discount) {
+    discountBadge.style.display = 'inline-block';
+    discountBadge.textContent = product.discount + ' off';
+  } else {
+    discountBadge.style.display = 'none';
+  }
+
+  document.getElementById("increaseQty").addEventListener("click", () => {
+    quantityInput.value = parseInt(quantityInput.value) + 1;
+  });
+
+  document.getElementById("decreaseQty").addEventListener("click", () => {
+    const current = parseInt(quantityInput.value);
+    if (current > 1) quantityInput.value = current - 1;
+  });
+
+  document.getElementById("addToCart").addEventListener("click", () => {
+    const qty = parseInt(quantityInput.value);
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    let quantities = JSON.parse(localStorage.getItem("cartQuantities")) || {};
+
+    if (!cart.includes(product.id)) {
+      cart.push(product.id);
+    }
+
+    quantities[product.id] = (quantities[product.id] || 0) + qty;
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+    localStorage.setItem("cartQuantities", JSON.stringify(quantities));
+
+    // Redirect to cart page after adding to cart
+    window.location.href = "cart.html";
+  });
+
+  document.getElementById("buyNow").addEventListener("click", () => {
+    const qty = parseInt(quantityInput.value);
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    let quantities = JSON.parse(localStorage.getItem("cartQuantities")) || {};
+
+    if (!cart.includes(product.id)) {
+      cart.push(product.id);
+    }
+
+    quantities[product.id] = (quantities[product.id] || 0) + qty;
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+    localStorage.setItem("cartQuantities", JSON.stringify(quantities));
+    window.location.href = "checkout.html";
+  });
+</script>
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
